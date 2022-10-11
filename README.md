@@ -1,6 +1,6 @@
 # MERN Exercise Tracker
 
-## Available Scripts
+## Client
 
 In the project directory, you can run:
 
