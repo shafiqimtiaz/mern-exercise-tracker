@@ -33,14 +33,14 @@ export default class ExercisesList extends Component {
 
 	componentDidMount() {
 		axios
-			.get("http://localhost:5000/exercises/")
+			.get("https://mern-ex-tracker-db.herokuapp.com/exercises/")
 			.then((res) => this.setState({ exercises: res.data }))
 			.catch((err) => console.log(err));
 	}
 
 	deleteExercise(id) {
 		axios
-			.delete("http://localhost:5000/exercises/" + id)
+			.delete("https://mern-ex-tracker-db.herokuapp.com/exercises/" + id)
 			.then((response) => console.log(response.data));
 
 		this.setState({
