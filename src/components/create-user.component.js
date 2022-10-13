@@ -61,7 +61,7 @@ export default class CreateUser extends Component {
 			.post(apiEndPoint + "users/add", user)
 			.then((res) => {
 				console.log(res.data);
-				window.location.href = "create";
+				window.location.href = "/";
 			})
 			.catch((e) => console.error(e.message));
 
