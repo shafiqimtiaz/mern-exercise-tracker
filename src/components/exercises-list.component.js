@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+// const apiEndPoint = "http://localhost:5000/";
+const apiEndPoint = "https://mern-ex-tracker-db.herokuapp.com/";
+
 const Exercise = (props) => (
 	<tr>
 		<td>{props.exercise.username}</td>
@@ -33,15 +36,16 @@ export default class ExercisesList extends Component {
 
 	componentDidMount() {
 		axios
-			.get("https://mern-ex-tracker-db.herokuapp.com/exercises/")
+			.get(apiEndPoint + "exercises")
 			.then((res) => this.setState({ exercises: res.data }))
 			.catch((err) => console.log(err));
 	}
 
 	deleteExercise(id) {
 		axios
-			.delete("https://mern-ex-tracker-db.herokuapp.com/exercises/" + id)
-			.then((response) => console.log(response.data));
+			.delete(apiEndPoint + "exercises/" + id)
+			.then((response) => console.log(response.data))
+			.catch((e) => console.error(e.message));
 
 		this.setState({
 			exercises: this.state.exercises.filter((el) => el._id !== id),
@@ -50,13 +54,17 @@ export default class ExercisesList extends Component {
 
 	exerciseList() {
 		return this.state.exercises.map((currentexercise) => {
-			return (
-				<Exercise
-					exercise={currentexercise}
-					deleteExercise={this.deleteExercise}
-					key={currentexercise._id}
-				/>
-			);
+			if (currentexercise.length !== 0) {
+				return (
+					<Exercise
+						exercise={currentexercise}
+						deleteExercise={this.deleteExercise}
+						key={currentexercise._id}
+					/>
+				);
+			} else {
+				return <div></div>;
+			}
 		});
 	}
 

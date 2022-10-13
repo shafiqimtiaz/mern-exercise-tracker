@@ -4,6 +4,9 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
+// const apiEndPoint = "http://localhost:5000/";
+const apiEndPoint = "https://mern-ex-tracker-db.herokuapp.com/";
+
 export function withRouter(Children) {
 	return (props) => {
 		const match = { params: useParams() };
@@ -32,7 +35,7 @@ class EditExercise extends Component {
 
 	componentDidMount() {
 		axios
-			.get("https://mern-ex-tracker-db.herokuapp.com/exercises/" + this.props.match.params.id)
+			.get(apiEndPoint + "exercises/" + this.props.match.params.id)
 			.then((response) => {
 				this.setState({
 					username: response.data.username,
@@ -44,7 +47,7 @@ class EditExercise extends Component {
 			.catch((err) => console.error(err.message));
 
 		axios
-			.get("https://mern-ex-tracker-db.herokuapp.com/users/")
+			.get(apiEndPoint + "users/")
 			.then((res) => {
 				if (res.data.length > 0) {
 					this.setState({
@@ -91,7 +94,7 @@ class EditExercise extends Component {
 
 		axios
 			.post(
-				"https://mern-ex-tracker-db.herokuapp.com/exercises/update/" + this.props.match.params.id,
+				apiEndPoint + "exercises/update/" + this.props.match.params.id,
 				exercise
 			)
 			.then((res) => {

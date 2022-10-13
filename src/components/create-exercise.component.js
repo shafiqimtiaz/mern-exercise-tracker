@@ -3,6 +3,9 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 
+// const apiEndPoint = "http://localhost:5000/";
+const apiEndPoint = "https://mern-ex-tracker-db.herokuapp.com/";
+
 export default class CreateExercise extends Component {
 	constructor(props) {
 		super(props);
@@ -23,7 +26,7 @@ export default class CreateExercise extends Component {
 	}
 
 	componentDidMount() {
-		axios.get("https://mern-ex-tracker-db.herokuapp.com/users/").then((res) => {
+		axios.get(apiEndPoint + "users").then((res) => {
 			if (res.data.length > 0) {
 				this.setState({
 					users: res.data.map((user) => user.username),
@@ -68,7 +71,7 @@ export default class CreateExercise extends Component {
 		};
 
 		axios
-			.post("https://mern-ex-tracker-db.herokuapp.com/add", exercise)
+			.post(apiEndPoint + "exercises/add", exercise)
 			.then((res) => {
 				console.log(res.data);
 				window.location.href = "/";
