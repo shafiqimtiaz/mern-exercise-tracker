@@ -1,5 +1,7 @@
 # MERN Exercise Tracker
 
+https://mern-ex-tracker.netlify.app/
+
 ## Client
 
 In the project directory, you can run:
