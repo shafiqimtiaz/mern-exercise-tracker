@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 
 // const apiEndPoint = "http://localhost:5000/";
-const apiEndPoint = "https://mern-ex-tracker-db-production.up.railway.app/";
+const apiEndPoint = process.env.REACT_APP_API_URL;
 
 export default class CreateExercise extends Component {
 	constructor(props) {

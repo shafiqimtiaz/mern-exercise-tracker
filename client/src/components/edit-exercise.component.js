@@ -5,7 +5,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 // const apiEndPoint = "http://localhost:5000/";
-const apiEndPoint = "https://mern-ex-tracker-db-production.up.railway.app/";
+const apiEndPoint = process.env.REACT_APP_API_URL;
 
 export function withRouter(Children) {
 	return (props) => {
