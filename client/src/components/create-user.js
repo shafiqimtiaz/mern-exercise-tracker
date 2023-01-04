@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-// const apiEndPoint = "http://localhost:5000/";
 const apiEndPoint = process.env.REACT_APP_API_URL;
 
 const User = (props) => (

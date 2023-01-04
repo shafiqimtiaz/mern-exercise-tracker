@@ -3,7 +3,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 
-// const apiEndPoint = "http://localhost:5000/";
 const apiEndPoint = process.env.REACT_APP_API_URL;
 
 export default class CreateExercise extends Component {

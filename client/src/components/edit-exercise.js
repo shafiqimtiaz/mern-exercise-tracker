@@ -4,7 +4,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-// const apiEndPoint = "http://localhost:5000/";
 const apiEndPoint = process.env.REACT_APP_API_URL;
 
 export function withRouter(Children) {
