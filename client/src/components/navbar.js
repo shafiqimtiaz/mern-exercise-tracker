@@ -6,7 +6,7 @@ export default class Navbar extends Component {
 	render() {
 		return (
 			<nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-				<Link to="/" className="navbar-brand">
+				<a className="navbar-brand" href="https://shafiqimtiaz.github.io/">
 					<img
 						src={logo}
 						alt="logo"
@@ -14,6 +14,8 @@ export default class Navbar extends Component {
 						height="30"
 						className="d-inline-block align-top mx-2"
 					/>
+				</a>
+				<Link to="/" className="navbar-brand">
 					Ex-Tracker
 				</Link>
 
