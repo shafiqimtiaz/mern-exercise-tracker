@@ -113,6 +113,7 @@ export default class CreateUser extends Component {
 							onChange={this.onChangeUsername}
 						/>
 					</div>
+					<br/>
 					<div className="form-group">
 						<input
 							type="submit"

@@ -136,6 +136,7 @@ export default class CreateExercise extends Component {
 							/>
 						</div>
 					</div>
+					<br/>
 					<div className="form-group">
 						<input
 							type="submit"
