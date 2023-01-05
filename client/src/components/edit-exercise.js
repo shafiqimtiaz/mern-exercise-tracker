@@ -112,7 +112,7 @@ class EditExercise extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="container">
 				<h3>Edit Exercise Log</h3>
 				<form onSubmit={this.onSubmit}>
 					<div className="form-group">
